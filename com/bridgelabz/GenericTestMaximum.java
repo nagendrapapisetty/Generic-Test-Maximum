@@ -18,7 +18,7 @@ public class GenericTestMaximum {
     }
 
     public static void main(String[] args) {
-        String maxString=compareTo("Apple","Peach","Banana");
+        String maxString=compareTo("Apple","Banana","Peach");
         System.out.println("Maximum from 3 String : "+maxString);
 
     }
