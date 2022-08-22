@@ -19,7 +19,7 @@ public class GenericTestMaximum {
 
     public static void main(String[] args) {
         System.out.println("----!Welcome to Generic Test Maximum!-----");
-        float maxFloat = compareTo(30.10F, 90.52F, 50.12F);
+        float maxFloat = compareTo(30.10F, 50.12F, 90.52F);
         System.out.println("Maximum from 3 Float : " + maxFloat);
 
     }
