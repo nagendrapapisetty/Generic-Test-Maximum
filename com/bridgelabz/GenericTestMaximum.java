@@ -19,7 +19,7 @@ public class GenericTestMaximum {
 
         public static void main(String[] args) {
             System.out.println("----!Welcome to Generic Test Maximum!-----");
-            int max=compareTo(50,100,90);
+            int max=compareTo(50,90,100);
             System.out.println("Maximum from 3 Integer : "+max);
         }
     }
