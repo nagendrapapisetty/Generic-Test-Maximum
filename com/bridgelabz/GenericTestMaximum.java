@@ -1,25 +1,35 @@
 package com.bridgelabz;
 
-public class GenericTestMaximum {
-    public static String compareTo(String str1,String str2,String str3) {
-        if(str1.compareTo(str2) > 0 ) {
-            if(str1.compareTo(str3) > 0) {
-                return str1;
-            } else {
-                return str3;
-            }
-        } else {
-            if(str2.compareTo(str3) > 0) {
-                return str2;
-            } else {
-                return str3;
-            }
+import java.util.ArrayList;
+import  java.util.Collections;
+
+public class GenericTestMaximum <T extends Comparable<T>> {
+
+    ArrayList<T> list = new ArrayList<T>();
+    GenericTestMaximum(T... inputs) {
+        for (T value : inputs) {
+            this.list.add(value);
         }
+    }
+    public T testMaximum() {
+        return GenericTestMaximum.testMaximum(list);
+    }
+    public static <T extends Comparable<T>> T testMaximum(ArrayList<T> list) {
+        Collections.sort(list);
+        T maxValue = list.get(list.size() - 1);
+        System.out.println("Maximum : " + maxValue);
+        return maxValue;
     }
 
     public static void main(String[] args) {
-        String maxString=compareTo("Apple","Banana","Peach");
-        System.out.println("Maximum from 3 String : "+maxString);
+        System.out.println("----!Welcome to Generic Test Maximum!-----");
+        Integer intValue1 = 30, intValue2 = 50, intValue3 = 90;
+        Float floatValue1 = 3.3f, floatValue2 = 3.5f, floatValue3 = 8.7f;
+        String stringValue1 = "Apple", stringValue2 = "Peach", stringValue3 = "Banana";
+
+        new GenericTestMaximum(intValue1, intValue2, intValue3).testMaximum();
+        new GenericTestMaximum(floatValue1, floatValue2, floatValue3).testMaximum();
+        new GenericTestMaximum(stringValue1, stringValue2, stringValue3).testMaximum();
 
     }
 }
